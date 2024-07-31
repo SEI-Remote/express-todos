@@ -26,12 +26,17 @@ async function newTodo(req, res) {
 }
 
 async function create(req, res) {
-  // initializing a new todo as not being done
-  req.body.done = false
-  // create the new todo
-  await Todo.create(req.body)
-  // redirect (GET) to /todos
-  res.redirect('/todos')
+  try {
+    // initializing a new todo as not being done
+    req.body.done = false
+    // create the new todo
+    await Todo.create(req.body)
+    // redirect (GET) to /todos
+    res.redirect('/todos')
+  } catch (error) {
+    console.log(error)
+    res.redirect('/todos')
+  }
 }
 
 
