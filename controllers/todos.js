@@ -25,8 +25,18 @@ async function newTodo(req, res) {
   res.render('todos/new')
 }
 
+async function create(req, res) {
+  // initializing a new todo as not being done
+  req.body.done = false
+  // create the new todo
+  await Todo.create(req.body)
+  // redirect (GET) to /todos
+  res.redirect('/todos')
+}
+
 
 export {
   index,
   newTodo as new,
+  create
 }
