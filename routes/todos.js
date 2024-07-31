@@ -4,5 +4,7 @@ const router = Router()
 
 // GET localhost:3000/todos
 router.get('/', todosCtrl.index)
+// GET localhost:3000/todos/new
+router.get('/new', todosCtrl.new)
 
 export { router }

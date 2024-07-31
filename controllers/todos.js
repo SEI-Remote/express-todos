@@ -21,6 +21,12 @@ async function index(req, res) {
   }
 }
 
+async function newTodo(req, res) {
+  res.render('todos/new')
+}
+
+
 export {
-  index
+  index,
+  newTodo as new,
 }
