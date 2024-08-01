@@ -54,10 +54,23 @@ async function show(req, res) {
   }
 }
 
+async function deleteTodo(req, res) {
+  try {
+    // find the todo and delete it
+    await Todo.findByIdAndDelete(req.params.todoId)
+    // redirect to /todos
+    res.redirect('/todos')
+  } catch (error) {
+    console.log(error)
+    res.redirect('/todos')
+  }
+}
+
 
 export {
   index,
   newTodo as new,
   create,
-  show
+  show,
+  deleteTodo as delete,
 }

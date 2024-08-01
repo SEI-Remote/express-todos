@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
   <title>Express To-dos</title>
 </head>
 <body>
   <h1>Todos as of <%= time %></h1>
   <a href="/todos/new">Add To-Do</a>
+  
   <ul>
     <% todos.forEach(todo => { %>
       <li>
+        <form method="POST" action="/todos/<%= todo._id %>?_method=DELETE" class="delete-form">
+          <button type="submit">X</button>
+        </form>
 				<a href="/todos/<%= todo._id %>"><%= todo.text %></a>
 				- 
 				<%= todo.done ? 'done' : 'not done' %>

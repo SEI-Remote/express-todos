@@ -10,4 +10,6 @@ router.get('/new', todosCtrl.new)
 router.get('/:todoId', todosCtrl.show)
 // POST localhost:3000/todos
 router.post('/', todosCtrl.create)
+// DELETE localhost:3000/todos/:todoId
+router.delete('/:todoId', todosCtrl.delete)
 export { router }
