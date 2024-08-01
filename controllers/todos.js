@@ -12,7 +12,8 @@ async function index(req, res) {
     // the operation is complete
     const todos = await Todo.find({})
     res.render('todos/index', {
-      todos
+      todos,
+      time: req.time
     })
   } catch (error) {
     console.log(error)
