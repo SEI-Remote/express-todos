@@ -11,7 +11,6 @@ async function index(req, res) {
     // await is used to stop execution until
     // the operation is complete
     const todos = await Todo.find({})
-  
     res.render('todos/index', {
       todos
     })
@@ -31,8 +30,23 @@ async function create(req, res) {
     req.body.done = false
     // create the new todo
     await Todo.create(req.body)
+    // {text: 'some text', done: false}
     // redirect (GET) to /todos
     res.redirect('/todos')
+  } catch (error) {
+    console.log(error)
+    res.redirect('/todos')
+  }
+}
+
+async function show(req, res) {
+  try {
+    // find the todo's details
+    const todo = await Todo.findById(req.params.todoId)
+    // render a view that shows a todo's details
+    res.render('todos/show', {
+      todo
+    })
   } catch (error) {
     console.log(error)
     res.redirect('/todos')
@@ -43,5 +57,6 @@ async function create(req, res) {
 export {
   index,
   newTodo as new,
-  create
+  create,
+  show
 }

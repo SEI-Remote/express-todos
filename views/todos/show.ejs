@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>To-Do Deets</h1>
+  <h2>Todo #<%= todo._id %></h2>
+  <h3><%= todo.text %></h3>
+  <p>Complete: <%= todo.done ? 'Yes' : 'No' %></p>
+  <a href="/todos">Go back</a>
+</body>
+</html>
