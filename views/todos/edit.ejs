@@ -9,6 +9,7 @@
   <h1>Edit To-Do</h1>
   <form autocomplete="off" action="/todos/<%= todo._id %>?_method=PUT" method="POST">
     <input value="<%= todo.text %>" type="text" name="text">
+    <input type="checkbox" name="done" <%= todo.done ? 'checked' : '' %> >
     <button type="submit">Save To-Do</button>
   </form>
 </body>

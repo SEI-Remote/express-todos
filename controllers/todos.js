@@ -81,6 +81,12 @@ async function edit(req, res) {
 }
 
 async function update(req, res) {
+  // if (req.body.done === 'on') {
+  //   req.body.done = true
+  // } else {
+  //   req.body.done = false
+  // }
+  req.body.done = !!req.body.done
   try {
     // find the todo and update it
     await Todo.findByIdAndUpdate(req.params.todoId, req.body, {new: true})
