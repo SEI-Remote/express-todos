@@ -7,5 +7,9 @@
 </head>
 <body>
   <h1>Edit To-Do</h1>
+  <form autocomplete="off" action="/todos/<%= todo._id %>?_method=PUT" method="POST">
+    <input value="<%= todo.text %>" type="text" name="text">
+    <button type="submit">Save To-Do</button>
+  </form>
 </body>
 </html>

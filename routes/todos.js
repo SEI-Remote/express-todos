@@ -14,4 +14,6 @@ router.get('/:todoId/edit', todosCtrl.edit)
 router.post('/', todosCtrl.create)
 // DELETE localhost:3000/todos/:todoId
 router.delete('/:todoId', todosCtrl.delete)
+// PUT localhost:3000/todos/:todoId
+router.put('/:todoId', todosCtrl.update)
 export { router }
