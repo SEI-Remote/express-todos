@@ -8,6 +8,7 @@
 <body>
   <h1>To-Do Deets</h1>
   <h2>Todo #<%= todo._id %></h2>
+  <a href="/todos/<%= todo._id %>/edit"><button>Edit</button></a>
   <h3><%= todo.text %></h3>
   <p>Complete: <%= todo.done ? 'Yes' : 'No' %></p>
   <a href="/todos">Go back</a>

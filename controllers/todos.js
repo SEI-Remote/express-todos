@@ -66,6 +66,10 @@ async function deleteTodo(req, res) {
   }
 }
 
+async function edit(req, res) {
+  res.render('todos/edit')
+}
+
 
 export {
   index,
@@ -73,4 +77,6 @@ export {
   create,
   show,
   deleteTodo as delete,
+  edit,
+
 }

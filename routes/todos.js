@@ -8,6 +8,8 @@ router.get('/', todosCtrl.index)
 router.get('/new', todosCtrl.new)
 // GET localhost:3000/todos/:todoId
 router.get('/:todoId', todosCtrl.show)
+// GET localhost:3000/todos/:todoId/edit
+router.get('/:todoId/edit', todosCtrl.edit)
 // POST localhost:3000/todos
 router.post('/', todosCtrl.create)
 // DELETE localhost:3000/todos/:todoId
